@@ -1,5 +1,13 @@
 $(document).ready(function(){
-  var imgs = $('img');
-  alert(imgs.length);
+  
+  
+  
+  $('div').css('background-color', '#38bode');
+  
+  
+  
+  
+  
+  
 });
 
