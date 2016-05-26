@@ -1,3 +1,5 @@
 $(document).ready(function(){
-    $('#myContent').html('Hello World');
+  var imgs = $('img');
+  alert(imgs.length);
 });
+
