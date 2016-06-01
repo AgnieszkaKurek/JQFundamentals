@@ -9,9 +9,15 @@ $(document).ready(function(){
     //});
     
     //var coll = $('div, span');
-   // alert(coll.length);
+    // alert(coll.length);
   
-  alert($('#TestDiv').html());
+    //alert($('#TestDiv').html());
+  
+    //alert($('div[title]').length);
+     //var divs =  $('div[title = "Div Title"]');
+    // alert(divs.length);
+     var inputs =  $('inputs[title = "text"]');
+     inputs.css('background-color','#ccff66');
   
   
   
