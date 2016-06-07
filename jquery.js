@@ -26,7 +26,7 @@ $(document).ready(function(){
        
       // alert($('div:contains("my div")').html());
       
-      $('tr:odd').css('background-color', '#669966');
+      $('#DataTable tr:odd').css('background-color', '#ffcccc');
       
   
   
