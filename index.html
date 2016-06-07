@@ -75,6 +75,12 @@
                 //Using unbind();
                // $('#MyDiv').unbind('mouseup');
             });
+            
+            $('.MyInput').change(function () {
+                alert($(this).val());
+                $(this).addClass('Highlight');
+            });
+
 
        }); 
        
