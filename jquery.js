@@ -26,7 +26,7 @@ $(document).ready(function(){
        
       // alert($('div:contains("my div")').html());
       
-      $('tr').css('background-color', '#669966');
+      $('tr:odd').css('background-color', '#669966');
       
   
   
