@@ -116,14 +116,21 @@
             
              $('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
             $('div.ParentWrapper').each(function () {
-                alert($(this).html());
+                //alert($(this).html());
             });
             
              $('div.ParentWrapper').remove();
              
              
-             $('input[type="text"]').addClass('Highlight');
+            // $('input[type="text"]').addClass('Highlight');
+             //$('#LastNameTextBox').removeClass('Highlight');
          });
+         
+         function FocusBlur(tb) {
+            $(tb).toggleClass('Highlight');
+        }
+        
+
 
     </script>
 </body> 
