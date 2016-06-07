@@ -60,15 +60,16 @@
             <tr>
                 <td>Comments</td>
                 <td><textarea rows="5" cols="60" id="CommentsTextBox">TextArea</textarea></td>
-            </tr>           
+            </tr> 
             <tr>
-                <td>
-                <select id="sel">
+                <td><select id="sel" >
                     <option value="AZ">AZ</option>
                     <option value="CA" selected="true">CA</option>
-                </select></td>
+                </select> </td>
+               
                 <td>&nbsp;</td>
-            </tr>
+            </tr>      
+            
             <tr>
                 <td><input id="SubmitButton" type="button" value="Submit" /></td>
                 <td>&nbsp;</td>
@@ -79,12 +80,7 @@
     
     <script>
        $(document).ready(function() {
-           //alert($('div[title]').length);
-            //var divs =  $('div[title = "Div Title"]');
-                 // alert(divs.length);
-            var inputs =  $('inputs[title = "text"]');
-                inputs.css('background-color','#ccff66');
-          
+            alert($('div:contains("my div")').html());
            
        });
     </script>
