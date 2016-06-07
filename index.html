@@ -35,12 +35,17 @@
     <div class="BlueDiv">
         <span>Blue div</span>
     </div>
-    
+    <span class="Foo">Span 1</span>
+    <span class="Foo">Span 2</span>
+    <span id="Span3" class="Foo">Span 2</span>
+    <br/>
+
 
     
     <div class="RedDiv">
         <span>Red div</span>
     </div>
+    
     <form id="form1" runat="server">
         <table style="width:300px;">
             <tr>
@@ -102,6 +107,17 @@
                     'color': '#c0d9d9',
                     'font-size': '20pt'
                 }).text('Changed Color');
+                
+                 var tcd = $('#TableContainerDiv');
+            tcd.append('<span style="background-color:#9370bd">Appended Child 1</span>');
+            tcd.prepend('<br /><span style="background-color:#9370bd">Prepended Child 1</span>');
+            $('<br /><span style="background-color:#9370bd">Appended Child 2</span>').appendTo(tcd);
+            $('<span style="background-color:#9370bd">Prepended Child 2</span>').prependTo(tcd);
+            
+             $('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
+            $('div.ParentWrapper').each(function () {
+                alert($(this).html());
+            });
          });
 
     </script>
