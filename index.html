@@ -9,128 +9,75 @@
 </head>  
 <body>
      
-    <div id="OutputDiv"></div>
-    <div id="TableContainerDiv" title="Contains Table">
-        <table id="DataTable">
-          <tr>
-             <td>Cell 1 Row 1</td>
-          </tr>
-          <tr>
-             <td>Cell 1 Row 2</td>
-          </tr>
-          <tr>
-             <td>Cell 1 Row 3</td>
-          </tr>
-          <tr>
-             <td>
-                <table style="width:100%">
-                    <tr>
-                        <td>Nested Table Cell and Row</td>
-                    </tr>
-                </table>
-             </td>
-          </tr>
-        </table>
-    </div>
-    <div class="BlueDiv">
-        <span>Blue div</span>
-    </div>
-    <span class="Foo">Span 1</span>
-    <span class="Foo">Span 2</span>
-    <span id="Span3" class="Foo">Span 2</span>
-    <br/>
-
-
-    
-    <div class="RedDiv">
-        <span>Red div</span>
-    </div>
-    
+     <div id="MyDiv">This is some text</div>
     <form id="form1" runat="server">
-        <table style="width:300px;">
+        <table id="MyTable" style="width:300px;" cellpadding="5">
             <tr>
                 <td style="width:30%;">First Name</td>
-                <td style="width:70%;"><input id="FirstNameTextBox" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" value="John" type="text" /></td>
+                <td style="width:70%;"><input id="FirstNameTextBox" type="text" /></td>
             </tr>
             <tr>
                 <td>Last Name</td>
-                <td><input id="LastNameTextBox" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text" /></td>
+                <td><input class="MyInput" id="LastNameTextBox" type="text" /></td>
             </tr>
             <tr>
                 <td>Comments</td>
-                <td><textarea rows="5" cols="60" id="CommentsTextBox">TextArea</textarea></td>
-            </tr>           
+                <td><textarea class="MyInput" rows="5" cols="60" id="CommentsTextBox"></textarea></td>
+            </tr>   
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="button" id="AddPhone" value="Add Phone" />
+                    <div id="PhonesDiv" style="margin-top:10px;">
+                        <div class="PhoneTypeDiv">
+                            <select class="PhoneType">
+                                <option value="">Select One:</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="Office">Office</option>
+                            </select>
+                        </div>
+                        <div class="PhoneNumberDiv">
+                            <input type="text" class="PhoneNumber" maxlength="12" />
+                        </div>
+                    </div>
+                </td>
+            </tr>        
             <tr>
                 <td>
-                <select id="sel">
-                    <option value="AZ">AZ</option>
-                    <option value="CA" selected="true">CA</option>
-                </select></td>
-                <td>&nbsp;</td>
+                    State
+                </td>
+                <td>
+                    <select id="StatesSelect" class="MyInput">
+                        <option value="AZ">AZ</option>
+                        <option value="CA" selected="true">CA</option>
+                    </select>                
+                </td>
             </tr>
             <tr>
                 <td><input id="SubmitButton" type="button" value="Submit" /></td>
-                <td>&nbsp;</td>
+                <td>
+                    <div id="DivOutput"></div>
+                </td>
             </tr>
         </table>  
-
     </form>
 
-
-    
     
     <script>
-        $(document).ready(function () {
-             
-             var html = '';
-             $('div.BlueDiv,div.RedDiv').each(function (index) {
-                html += "<br />" + index + " " + $(this).text();
+      $(document).ready(function () {
+            WireEvents();
+        });
+         function WireEvents() {
+            $('#SubmitButton').click(function () {
+                var firstNameVal = $('#FirstNameTextBox').val();
+                var lastNameVal = $('#LastNameTextBox').val();
+                $('#DivOutput').text(firstNameVal + ' ' + lastNameVal);
+                //Using unbind();
+               // $('#MyDiv').unbind('mouseup');
             });
-            var output = $('#OutputDiv');
-            output.html(html);
-            
-            
-             $('div.BlueDiv,div.RedDiv').each(function (index) {
-                this.title = "Some title";
-                $(this).attr('title', 'Some title 2');
-            
-              });
-              
-               $('div.BlueDiv,div.RedDiv')
-                .attr(
-                    {
-                        title: 'Some title 3'
-                    }
-                )
-                .css({
-                    'background-color': '#9932cd',
-                    'color': '#c0d9d9',
-                    'font-size': '20pt'
-                }).text('Changed Color');
-                
-                 var tcd = $('#TableContainerDiv');
-            tcd.append('<span style="background-color:#9370bd">Appended Child 1</span>');
-            tcd.prepend('<br /><span style="background-color:#9370bd">Prepended Child 1</span>');
-            $('<br /><span style="background-color:#9370bd">Appended Child 2</span>').appendTo(tcd);
-            $('<span style="background-color:#9370bd">Prepended Child 2</span>').prependTo(tcd);
-            
-             $('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
-            $('div.ParentWrapper').each(function () {
-                //alert($(this).html());
-            });
-            
-             $('div.ParentWrapper').remove();
-             
-             
-            // $('input[type="text"]').addClass('Highlight');
-             //$('#LastNameTextBox').removeClass('Highlight');
-         });
-         
-         function FocusBlur(tb) {
-            $(tb).toggleClass('Highlight');
-        }
-        
 
+       }); 
+       
 
     </script>
 </body> 
