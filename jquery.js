@@ -24,7 +24,9 @@ $(document).ready(function(){
           
        //});
        
-       alert($('div:contains("my div")').html());
+      // alert($('div:contains("my div")').html());
+      
+      $('tr').css('background-color', '#669966');
       
   
   
