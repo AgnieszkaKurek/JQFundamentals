@@ -1,0 +1,20 @@
+{
+  "name": "JQFundamentals",
+  "homepage": "https://github.com/AgnieszkaKurek/JQFundamentals",
+  "authors": [
+    "Agnieszka Kurek <agniechakurek@gmail.com>"
+  ],
+  "description": "proiect jquery",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
